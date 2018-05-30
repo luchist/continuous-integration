@@ -16,15 +16,41 @@
     <script src="https://code.jquery.com/qunit/qunit-1.18.0.js"></script>
 
     <script>
-    // your solution will go here!
+
+        function getChange (totalPayable, cashPaid) {
+            var coins = [200, 100, 50, 20, 10, 5, 2, 1];
+            var change = [];
+            subTotal = cashPaid - totalPayable
+            while(subTotal > 0){
+                //mientras que el subtotal es mayor que cero
+                //La moneda mas cercana
+                coin = coins.find(c => c <= subTotal)
+                //pongo la moneda en la caja de cambio
+                change.push(coin)
+                //resto al subtotal el valor de la moneda
+                subTotal = subTotal - coin
+            }
+            return change;
+        };
     </script>
 
     <script>
+
     test('getChange(1,1) should equal [] - an empty array', function(assert) {
       var result = getChange(1, 1); //no change/coins just an empty array
       var expected = [];
       assert.deepEqual(result, expected);
     }); // use deepEqual for arrays see: https://api.qunitjs.com/deepEqual/
+    test('getChange(215, 300) should return [50, 20, 10, 5]', function(assert) {
+      var result = getChange(215, 300); // expect an array containing [50,20,10,5]
+      var expected = [50, 20, 10, 5];
+      assert.deepEqual(result, expected);
+    });
+    test('getChange(486, 600) should equal [100, 10, 2, 2]', function(assert) {
+      var result = getChange(486, 600);
+      var expected = [100, 10, 2, 2];
+      assert.deepEqual(result, expected);
+    })
 
     </script>
   </body>
