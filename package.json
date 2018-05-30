@@ -1,0 +1,19 @@
+{
+  "name": "continuous-integration",
+  "version": "1.0.0",
+  "description": "un coso para practicar CI con travis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luchist/continuous-integration.git"
+  },
+  "author": "luchist",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luchist/continuous-integration/issues"
+  },
+  "homepage": "https://github.com/luchist/continuous-integration#readme"
+}
